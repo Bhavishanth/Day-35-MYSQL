@@ -160,4 +160,4 @@ CREATE TABLE roll ( mov_id INT NOT NULL, actor TEXT NOT NULL, roll_1 TEXT NOT NU
 
 INSERT INTO roll VALUES (5, 'Robert Downey Jr.', 'Billionaire', 'MK42');
 
--- fetch SELECT * FROM Movie LEFT JOIN roll ON Movie.id=roll.mov_id
+-- fetch SELECT * FROM Movie LEFT JOIN roll ON Movie.id=roll.mov_id;
