@@ -133,3 +133,31 @@ INSERT INTO act_skills VALUES (0002, 'Actor, Singer, Filmmaker, Politician');
 INSERT INTO act_skills VALUES (0003, 'Actor, Dancer');
 INSERT INTO act_skills VALUES (0004, 'Actor, Singer, Dancer');
 INSERT INTO act_skills VALUES (0005, 'Actor, Producer');
+
+-- fetch 
+SELECT * FROM Actor 
+INNER JOIN act_skills 
+ON 
+Actor.id=act_skills.act_id;
+
+5. Artist can perform multiple role in a single film.
+
+CREATE TABLE MOVIE (
+  id INT NOT NULL,
+  mov_title TEXT NOT NULL,
+  mov_year INT NOT NULL,
+  duration_min INT NOT NULL,
+  language TEXT NOT NULL
+);
+
+INSERT INTO MOVIE VALUES (1, 'Avatar', 2009, 162, 'English');
+INSERT INTO MOVIE VALUES (2, 'The Avengers', 2012, 160, 'English');
+INSERT INTO MOVIE VALUES (3, 'Jurassic World', 2015, 124, 'English');
+INSERT INTO MOVIE VALUES (4, 'Furious 7', 2015, 137, 'English');
+INSERT INTO MOVIE VALUES (5, 'Iron Man 3', 2013, 130, 'English');
+-- create roll 
+CREATE TABLE roll ( mov_id INT NOT NULL, actor TEXT NOT NULL, roll_1 TEXT NOT NULL, roll_2 TEXT NOT NULL );
+
+INSERT INTO roll VALUES (5, 'Robert Downey Jr.', 'Billionaire', 'MK42');
+
+-- fetch SELECT * FROM Movie LEFT JOIN roll ON Movie.id=roll.mov_id
